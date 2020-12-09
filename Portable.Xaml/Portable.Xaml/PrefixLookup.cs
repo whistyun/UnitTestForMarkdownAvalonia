@@ -32,69 +32,77 @@ using System.Xml;
 
 namespace Portable.Xaml
 {
-	internal class PrefixLookup : INamespacePrefixLookup
-	{
-		public PrefixLookup (XamlSchemaContext schemaContext)
-		{
-			sctx = schemaContext;
-			Namespaces = new List<NamespaceDeclaration> ();
-		}
-		
-		XamlSchemaContext sctx;
-		
-		public bool IsCollectingNamespaces { get; set; }
-		
-		public List<NamespaceDeclaration> Namespaces { get; private set; }
+    internal class PrefixLookup : INamespacePrefixLookup
+    {
+        public PrefixLookup(XamlSchemaContext schemaContext)
+        {
+            sctx = schemaContext;
+            Namespaces = new List<NamespaceDeclaration>();
+        }
 
-		public string LookupPrefix (string ns)
-		{
-			NamespaceDeclaration nd = null;
-			foreach (var nsd in Namespaces)
-			{
-				if (nsd.Namespace == ns)
-				{
-					nd = nsd;
-					break;
-				}
-			}
+        XamlSchemaContext sctx;
 
-			if (nd == null && IsCollectingNamespaces)
-				return AddNamespace (ns);
-			else
-				return nd != null ? nd.Prefix : null;
-		}
-		
-		public string AddNamespace (string ns)
-		{
-			var l = Namespaces;
-			string prefix, s;
-			if (ns == XamlLanguage.Xaml2006Namespace)
-				prefix = "x";
-			else if (!l.Any (i => i.Prefix == String.Empty))
-				prefix = String.Empty;
-			else if ((s = GetAcronym (ns)) != null && !l.Any (i => i.Prefix == s))
-				prefix = s;
-			else
-				prefix = sctx.GetPreferredPrefix (ns);
-			l.Add (new NamespaceDeclaration (ns, prefix));
-			return prefix;
-		}
+        public bool IsCollectingNamespaces { get; set; }
 
-		const string pre = "clr-namespace:";
+        public List<NamespaceDeclaration> Namespaces { get; private set; }
 
-		string GetAcronym (string ns)
-		{
-			int idx = ns.IndexOf (';');
-			if (idx < 0)
-				return null;
-			if (!ns.StartsWith (pre, StringComparison.Ordinal))
-				return null;
-			ns = ns.Substring (pre.Length, idx - pre.Length);
-			string ac = "";
-			foreach (string nsp in ns.Split ('.'))
-				if (nsp.Length > 0)
-					ac += nsp [0];
-			return ac.Length > 0 ? ac.ToLower () : null;
-		}
-	}
+        public string LookupPrefix(string ns)
+        {
+            NamespaceDeclaration nd = null;
+            foreach (var nsd in Namespaces)
+            {
+                if (nsd.Namespace == ns)
+                {
+                    nd = nsd;
+                    break;
+                }
+            }
+
+            if (nd == null && IsCollectingNamespaces)
+                return AddNamespace(ns);
+            else
+                return nd != null ? nd.Prefix : null;
+        }
+
+        public string AddNamespace(string ns)
+        {
+            var l = Namespaces;
+            string prefix, s;
+            if (ns == XamlLanguage.Xaml2006Namespace)
+                prefix = "x";
+            else if (!l.Any(i => i.Prefix == String.Empty))
+                prefix = String.Empty;
+            else if ((s = GetAcronym(ns)) != null && !l.Any(i => i.Prefix == s))
+                prefix = s;
+            else
+            {
+                var idx = 2;
+                s = sctx.GetPreferredPrefix(ns);
+                prefix = s;
+                while (l.Any(i => i.Prefix == prefix))
+                {
+                    prefix = s + idx++;
+                }
+            }
+            l.Add(new NamespaceDeclaration(ns, prefix));
+            return prefix;
+        }
+
+        const string pre = "clr-namespace:";
+
+        string GetAcronym(string ns)
+        {
+            int idx = ns.IndexOf(';');
+            if (idx < 0)
+                return null;
+            if (!ns.StartsWith(pre, StringComparison.Ordinal))
+                return null;
+            ns = ns.Substring(pre.Length, idx - pre.Length);
+            string ac = "";
+            foreach (string nsp in ns.Split('.'))
+                if (nsp.Length > 0)
+                    ac += nsp[0];
+            return ac.Length > 0 ? ac.ToLower() : null;
+        }
+    }
 }
