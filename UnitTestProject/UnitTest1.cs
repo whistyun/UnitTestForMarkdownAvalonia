@@ -35,6 +35,17 @@ namespace UnitTestProject
             assetPath = Path.GetDirectoryName(asm.Location);
         }
 
+        [Test]
+        public void Transform_givenTest1_generatesExpectedResult()
+        {
+            using (UnitTestApplication.Start(TestServices.StyledWindow))
+            {
+                var text = Util.LoadText("Test1.md");
+                var markdown = new Markdown.Avalonia.Markdown();
+                var result = markdown.Transform(text);
+                Approvals.Verify(Util.AsXaml(result));
+            }
+        }
 
         [Test]
         public void Transform_givenLists1_generatesExpectedResult()
@@ -44,12 +55,137 @@ namespace UnitTestProject
                 var text = Util.LoadText("Lists1.md");
                 var markdown = new Markdown.Avalonia.Markdown();
                 var result = markdown.Transform(text);
+                Approvals.Verify(Util.AsXaml(result));
+            }
+        }
 
-                var rowspc = result.GetValue(Avalonia.Controls.Grid.RowSpanProperty);
+        [Test]
+        public void Transform_givenLists2_generatesExpectedResult()
+        {
+            using (UnitTestApplication.Start(TestServices.StyledWindow))
+            {
+                var text = Util.LoadText("Lists2.md");
+                var markdown = new Markdown.Avalonia.Markdown();
+                var result = markdown.Transform(text);
+                Approvals.Verify(Util.AsXaml(result));
+            }
+        }
 
+        [Test]
+        public void Transform_givenTables1_generatesExpectedResult()
+        {
+            using (UnitTestApplication.Start(TestServices.StyledWindow))
+            {
+                var text = Util.LoadText("Tables.md");
+                var markdown = new Markdown.Avalonia.Markdown();
+                var result = markdown.Transform(text);
+                Approvals.Verify(Util.AsXaml(result));
+            }
+        }
 
+        [Test]
+        public void Transform_givenHorizontalRules_generatesExpectedResult()
+        {
+            using (UnitTestApplication.Start(TestServices.StyledWindow))
+            {
+                var text = Util.LoadText("HorizontalRules.md");
+                var markdown = new Markdown.Avalonia.Markdown();
+                var result = markdown.Transform(text);
+                Approvals.Verify(Util.AsXaml(result));
+            }
+        }
+
+        [Test]
+        public void Transform_givenLinksInline1_generatesExpectedResult()
+        {
+            using (UnitTestApplication.Start(TestServices.StyledWindow))
+            {
+                var text = Util.LoadText("Links_inline_style.md");
+                var markdown = new Markdown.Avalonia.Markdown();
+                var result = markdown.Transform(text);
+                Approvals.Verify(Util.AsXaml(result));
+            }
+        }
+
+        [Test]
+        public void Transform_givenLinksInline2_generatesExpectedResult()
+        {
+            using (UnitTestApplication.Start(TestServices.StyledWindow))
+            {
+                var text = Util.LoadText("Links_inline_style.md");
+                var markdown = new Markdown.Avalonia.Markdown();
+                markdown.DisabledTootip = true;
+                var result = markdown.Transform(text);
+                Approvals.Verify(Util.AsXaml(result));
+            }
+        }
+
+        [Test]
+        public void Transform_givenTextStyles_generatesExpectedResult()
+        {
+            using (UnitTestApplication.Start(TestServices.StyledWindow))
+            {
+                var text = Util.LoadText("Text_style.md");
+                var markdown = new Markdown.Avalonia.Markdown();
+                var result = markdown.Transform(text);
+                Approvals.Verify(Util.AsXaml(result));
+            }
+        }
+
+        [Test]
+        public void Transform_givenImages1_generatesExpectedResult()
+        {
+            using (UnitTestApplication.Start(TestServices.StyledWindow))
+            {
+                var text = Util.LoadText("Images.md");
+                var markdown = new Markdown.Avalonia.Markdown();
+                markdown.AssetPathRoot = assetPath;
+
+                var result = markdown.Transform(text);
+                Approvals.Verify(Util.AsXaml(result));
+            }
+        }
+
+        [Test]
+        public void Transform_givenBlockqoute_generatesExpectedResult()
+        {
+            using (UnitTestApplication.Start(TestServices.StyledWindow))
+            {
+                var text = Util.LoadText("Blockquite.md");
+                var markdown = new Markdown.Avalonia.Markdown();
+
+                var result = markdown.Transform(text);
+                Approvals.Verify(Util.AsXaml(result));
+            }
+        }
+
+        [Test]
+        public void Transform_givenMixing_generatesExpectedResult()
+        {
+            using (UnitTestApplication.Start(TestServices.StyledWindow))
+            {
+                var text = Util.LoadText("Mixing.md");
+                var markdown = new Markdown.Avalonia.Markdown();
+                markdown.AssetPathRoot = assetPath;
+
+                var result = markdown.Transform(text);
+                Approvals.Verify(Util.AsXaml(result));
+            }
+        }
+
+        [Test]
+        public void Transform_givenEmoji()
+        {
+            using (UnitTestApplication.Start(TestServices.StyledWindow))
+            {
+                var text = Util.LoadText("Emoji.md");
+                var markdown = new Markdown.Avalonia.Markdown();
+                markdown.AssetPathRoot = assetPath;
+
+                var result = markdown.Transform(text);
                 Approvals.Verify(Util.AsXaml(result));
             }
         }
     }
+
 }

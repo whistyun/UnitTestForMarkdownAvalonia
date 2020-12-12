@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<StackPanel xmlns:c="clr-namespace:ColorTextBlock.Avalonia;assembly=ColorTextBlock.Avalonia" xmlns:m="clr-namespace:Markdown.Avalonia.Controls;assembly=Markdown.Avalonia" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="https://github.com/avaloniaui">
+  <c:CTextBlock Classes="Paragraph">
+    <c:CRun Text="Dashes:" Background="{x:Null}" />
+  </c:CTextBlock>
+  <m:Rule BoldLineWidth="2" Classes="Single" />
+  <c:CTextBlock Classes="Paragraph" />
+  <m:Rule BoldLineWidth="2" Classes="Single" />
+  <c:CTextBlock Classes="Paragraph" />
+  <m:Rule BoldLineWidth="2" Classes="Single" />
+  <c:CTextBlock Classes="Paragraph" />
+  <m:Rule BoldLineWidth="2" Classes="Single" />
+  <c:CTextBlock Classes="Paragraph">
+    <c:CRun Text=" ---" Background="{x:Null}" />
+  </c:CTextBlock>
+  <m:Rule BoldLineWidth="2" Classes="Single" />
+  <c:CTextBlock Classes="Paragraph" />
+  <m:Rule BoldLineWidth="2" Classes="Single" />
+  <c:CTextBlock Classes="Paragraph" />
+  <m:Rule BoldLineWidth="2" Classes="Single" />
+  <c:CTextBlock Classes="Paragraph" />
+  <m:Rule BoldLineWidth="2" Classes="Single" />
+  <c:CTextBlock Classes="Paragraph" />
+  <Grid Classes="List" xmlns="">
+    <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
+      <c:CRun Text="○" Background="{x:Null}" />
+    </c:CTextBlock>
+    <StackPanel Grid.Column="1" Grid.Row="0">
+      <Grid Classes="List">
+        <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
+          <c:CRun Text="○" Background="{x:Null}" />
+        </c:CTextBlock>
+        <StackPanel Grid.Column="1" Grid.Row="0">
+          <c:CTextBlock Classes="Paragraph">
+            <c:CRun Text="-" Background="{x:Null}" />
+          </c:CTextBlock>
+        </StackPanel>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition />
+          <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition />
+        </Grid.RowDefinitions>
+      </Grid>
+    </StackPanel>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+    </Grid.RowDefinitions>
+  </Grid>
+  <c:CTextBlock Classes="Paragraph">
+    <c:CRun Text="Asterisks:" Background="{x:Null}" />
+  </c:CTextBlock>
+  <m:Rule BoldLineWidth="2" Classes="Bold" />
+  <c:CTextBlock Classes="Paragraph" />
+  <m:Rule BoldLineWidth="2" Classes="Bold" />
+  <c:CTextBlock Classes="Paragraph" />
+  <m:Rule BoldLineWidth="2" Classes="Bold" />
+  <c:CTextBlock Classes="Paragraph" />
+  <m:Rule BoldLineWidth="2" Classes="Bold" />
+  <c:CTextBlock Classes="Paragraph">
+    <c:CRun Text=" ***" Background="{x:Null}" />
+  </c:CTextBlock>
+  <m:Rule BoldLineWidth="2" Classes="Bold" />
+  <c:CTextBlock Classes="Paragraph" />
+  <m:Rule BoldLineWidth="2" Classes="Bold" />
+  <c:CTextBlock Classes="Paragraph" />
+  <m:Rule BoldLineWidth="2" Classes="Bold" />
+  <c:CTextBlock Classes="Paragraph" />
+  <m:Rule BoldLineWidth="2" Classes="Bold" />
+  <c:CTextBlock Classes="Paragraph" />
+  <Grid Classes="List" xmlns="">
+    <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
+      <c:CRun Text="•" Background="{x:Null}" />
+    </c:CTextBlock>
+    <StackPanel Grid.Column="1" Grid.Row="0">
+      <Grid Classes="List">
+        <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
+          <c:CRun Text="•" Background="{x:Null}" />
+        </c:CTextBlock>
+        <StackPanel Grid.Column="1" Grid.Row="0">
+          <c:CTextBlock Classes="Paragraph">
+            <c:CRun Text="*" Background="{x:Null}" />
+          </c:CTextBlock>
+        </StackPanel>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition />
+          <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition />
+        </Grid.RowDefinitions>
+      </Grid>
+    </StackPanel>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+    </Grid.RowDefinitions>
+  </Grid>
+  <c:CTextBlock Classes="Paragraph">
+    <c:CRun Text="Underscores:" Background="{x:Null}" />
+  </c:CTextBlock>
+  <m:Rule BoldLineWidth="2" Classes="BoldWithSingle" />
+  <c:CTextBlock Classes="Paragraph" />
+  <m:Rule BoldLineWidth="2" Classes="BoldWithSingle" />
+  <c:CTextBlock Classes="Paragraph" />
+  <m:Rule BoldLineWidth="2" Classes="BoldWithSingle" />
+  <c:CTextBlock Classes="Paragraph" />
+  <m:Rule BoldLineWidth="2" Classes="BoldWithSingle" />
+  <c:CTextBlock Classes="Paragraph">
+    <c:CRun Text=" ___" Background="{x:Null}" />
+  </c:CTextBlock>
+  <m:Rule BoldLineWidth="2" Classes="BoldWithSingle" />
+  <c:CTextBlock Classes="Paragraph" />
+  <m:Rule BoldLineWidth="2" Classes="BoldWithSingle" />
+  <c:CTextBlock Classes="Paragraph" />
+  <m:Rule BoldLineWidth="2" Classes="BoldWithSingle" />
+  <c:CTextBlock Classes="Paragraph" />
+  <m:Rule BoldLineWidth="2" Classes="BoldWithSingle" />
+  <c:CTextBlock Classes="Paragraph">
+    <c:CRun Text=" _ _ _" Background="{x:Null}" />
+  </c:CTextBlock>
+</StackPanel>
