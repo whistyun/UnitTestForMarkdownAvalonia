@@ -10,13 +10,11 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.10.0-rc1" />
   </ItemGroup>
-  <ItemGroup>
-  </ItemGroup>
-  <Import Project="..\Avalonia.UnitTests.Assets\Shared\PlatformSupport\PlatformSupport.projitems" Label="Shared" />
-  <Import Project="..\Avalonia.UnitTests.Assets\build\Moq.props" />
-  <Import Project="..\Avalonia.UnitTests.Assets\build\Rx.props" />
+
+  <Import Project="..\..\src\Shared\PlatformSupport\PlatformSupport.projitems" Label="Shared" />
+  <Import Project="..\..\build\Moq.props" />
+  <Import Project="..\..\build\Rx.props" />
+  <Import Project="..\..\build\SharedVersion.props" />
 </Project>

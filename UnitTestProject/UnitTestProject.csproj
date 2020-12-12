@@ -27,6 +27,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Markdown.Avalonia\ColorTextBlock.Avalonia\ColorTextBlock.Avalonia.csproj" />
     <ProjectReference Include="..\..\Markdown.Avalonia\Markdown.Avalonia\Markdown.Avalonia.csproj" />
-    <ProjectReference Include="..\Avalonia.UnitTests\Avalonia.UnitTests.csproj" />
+    <ProjectReference Include="..\Avalonia.UnitTests\tests\Avalonia.UnitTests\Avalonia.UnitTests.csproj" />
   </ItemGroup>
 </Project>
