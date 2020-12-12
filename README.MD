@@ -1,5 +1,7 @@
 # Markdown.Avalonia.Test
 
+Experimental project for regression testing in Markdown.Avalonia
+
 ## Open Source Components / Libraries
 
 ```txt
