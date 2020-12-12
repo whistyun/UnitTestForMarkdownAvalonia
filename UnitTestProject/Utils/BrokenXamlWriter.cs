@@ -291,6 +291,7 @@ namespace UnitTestProject.Utils
         public BrokenXamlWriter()
         {
             Document = new XmlDocument();
+            RegisterAssembly(typeof(Control).Assembly);
         }
 
         private XmlElement CreateElement(string name)
@@ -311,11 +312,7 @@ namespace UnitTestProject.Utils
             }
             else
             {
-                if (String.IsNullOrEmpty(XmlNamespaces[prefix].Namespace))
-                    return Document.CreateElement(name);
-
-                else
-                    return Document.CreateElement(prefix, name, XmlNamespaces[prefix].Namespace);
+                return Document.CreateElement(prefix, name, XmlNamespaces[prefix].Namespace);
             }
         }
 
@@ -338,11 +335,7 @@ namespace UnitTestProject.Utils
             }
             else
             {
-                if (String.IsNullOrEmpty(XmlNamespaces[prefix].Namespace))
-                    return Document.CreateAttribute(name);
-
-                else
-                    return Document.CreateAttribute(prefix, name, XmlNamespaces[prefix].Namespace);
+                return Document.CreateAttribute(prefix, name, XmlNamespaces[prefix].Namespace);
             }
         }
 
@@ -350,10 +343,9 @@ namespace UnitTestProject.Utils
         {
             var valueType = value.GetType();
 
-            var root = CreateElement(GetPrefixFor(valueType), valueType.Name);
+            var root = Document.CreateElement("", valueType.Name, XmlNamespaces[""].Namespace);
 
             Document.AppendChild(root);
-            Document.DocumentElement.SetAttribute("xmlns:x", "http://schemas.microsoft.com/winfx/2006/xaml");
 
             ApplyTo(root, (AvaloniaObject)value);
 
@@ -363,8 +355,24 @@ namespace UnitTestProject.Utils
 
                 Document.DocumentElement.SetAttribute("xmlns:" + xmlSpc.Prefix, xmlSpc.Namespace);
             }
+            Document.DocumentElement.SetAttribute("xmlns:x", "http://schemas.microsoft.com/winfx/2006/xaml");
 
             return Document;
+        }
+
+        private void ApplyTo(XmlNode valueNode, AvaloniaObject value)
+        {
+            ObjectNode objNode = Collect(value);
+
+            if (objNode.Content != null)
+            {
+                Append(valueNode, objNode.Content, true);
+            }
+
+            foreach (var a in objNode.Attributes)
+            {
+                Append(valueNode, a, false);
+            }
         }
 
         private void Append(XmlNode valueNode, ObjectProperty prop, bool isContent)
@@ -437,22 +445,6 @@ namespace UnitTestProject.Utils
                 valueNode.AppendChild(propHolder);
 
                 ApplyTo(element, aobj);
-            }
-        }
-
-
-        private void ApplyTo(XmlNode valueNode, AvaloniaObject value)
-        {
-            ObjectNode objNode = Collect(value);
-
-            if (objNode.Content != null)
-            {
-                Append(valueNode, objNode.Content, true);
-            }
-
-            foreach (var a in objNode.Attributes)
-            {
-                Append(valueNode, a, false);
             }
         }
 

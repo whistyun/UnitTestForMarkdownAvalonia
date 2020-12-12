@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-16"?>
-<StackPanel xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:c="clr-namespace:ColorTextBlock.Avalonia;assembly=ColorTextBlock.Avalonia" xmlns:m="clr-namespace:Markdown.Avalonia.Controls;assembly=Markdown.Avalonia">
+<StackPanel xmlns:c="clr-namespace:ColorTextBlock.Avalonia;assembly=ColorTextBlock.Avalonia" xmlns:m="clr-namespace:Markdown.Avalonia.Controls;assembly=Markdown.Avalonia" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="https://github.com/avaloniaui">
   <c:CTextBlock Classes="Paragraph">
     <c:CRun Text="First we have a simple numeric list" Background="{x:Null}" />
   </c:CTextBlock>
-  <Grid Classes="List">
+  <Grid Classes="List" xmlns="">
     <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
       <c:CRun Text="1." Background="{x:Null}" />
     </c:CTextBlock>
@@ -50,7 +50,7 @@
   <c:CTextBlock Classes="Paragraph">
     <c:CRun Text="Then we have a simple unordered list" Background="{x:Null}" />
   </c:CTextBlock>
-  <Grid Classes="List">
+  <Grid Classes="List" xmlns="">
     <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
       <c:CRun Text="•" Background="{x:Null}" />
     </c:CTextBlock>
@@ -100,7 +100,7 @@
   <c:CTextBlock Classes="Paragraph">
     <c:CRun Text="Asterisks tight:" Background="{x:Null}" />
   </c:CTextBlock>
-  <Grid Classes="List">
+  <Grid Classes="List" xmlns="">
     <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
       <c:CRun Text="•" Background="{x:Null}" />
     </c:CTextBlock>
@@ -138,7 +138,7 @@
   <c:CTextBlock Classes="Paragraph">
     <c:CRun Text="Asterisks loose:" Background="{x:Null}" />
   </c:CTextBlock>
-  <Grid Classes="List">
+  <Grid Classes="List" xmlns="">
     <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
       <c:CRun Text="•" Background="{x:Null}" />
     </c:CTextBlock>
@@ -177,7 +177,7 @@
   <c:CTextBlock Classes="Paragraph">
     <c:CRun Text="Pluses tight:" Background="{x:Null}" />
   </c:CTextBlock>
-  <Grid Classes="List">
+  <Grid Classes="List" xmlns="">
     <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
       <c:CRun Text="▪" Background="{x:Null}" />
     </c:CTextBlock>
@@ -215,7 +215,7 @@
   <c:CTextBlock Classes="Paragraph">
     <c:CRun Text="Pluses loose:" Background="{x:Null}" />
   </c:CTextBlock>
-  <Grid Classes="List">
+  <Grid Classes="List" xmlns="">
     <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
       <c:CRun Text="▪" Background="{x:Null}" />
     </c:CTextBlock>
@@ -254,7 +254,7 @@
   <c:CTextBlock Classes="Paragraph">
     <c:CRun Text="Minuses tight:" Background="{x:Null}" />
   </c:CTextBlock>
-  <Grid Classes="List">
+  <Grid Classes="List" xmlns="">
     <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
       <c:CRun Text="○" Background="{x:Null}" />
     </c:CTextBlock>
@@ -292,7 +292,7 @@
   <c:CTextBlock Classes="Paragraph">
     <c:CRun Text="Minuses loose:" Background="{x:Null}" />
   </c:CTextBlock>
-  <Grid Classes="List">
+  <Grid Classes="List" xmlns="">
     <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
       <c:CRun Text="○" Background="{x:Null}" />
     </c:CTextBlock>
@@ -333,7 +333,7 @@
   <c:CTextBlock Classes="Paragraph">
     <c:CRun Text="Tight:" Background="{x:Null}" />
   </c:CTextBlock>
-  <Grid Classes="List">
+  <Grid Classes="List" xmlns="">
     <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
       <c:CRun Text="1." Background="{x:Null}" />
     </c:CTextBlock>
@@ -371,7 +371,7 @@
   <c:CTextBlock Classes="Paragraph">
     <c:CRun Text="and:" Background="{x:Null}" />
   </c:CTextBlock>
-  <Grid Classes="List">
+  <Grid Classes="List" xmlns="">
     <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
       <c:CRun Text="1." Background="{x:Null}" />
     </c:CTextBlock>
@@ -409,7 +409,7 @@
   <c:CTextBlock Classes="Paragraph">
     <c:CRun Text="Loose using tabs:" Background="{x:Null}" />
   </c:CTextBlock>
-  <Grid Classes="List">
+  <Grid Classes="List" xmlns="">
     <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
       <c:CRun Text="1." Background="{x:Null}" />
     </c:CTextBlock>
@@ -447,7 +447,7 @@
   <c:CTextBlock Classes="Paragraph">
     <c:CRun Text="and using spaces:" Background="{x:Null}" />
   </c:CTextBlock>
-  <Grid Classes="List">
+  <Grid Classes="List" xmlns="">
     <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
       <c:CRun Text="1." Background="{x:Null}" />
     </c:CTextBlock>
@@ -485,7 +485,7 @@
   <c:CTextBlock Classes="Paragraph">
     <c:CRun Text="Multiple paragraphs:" Background="{x:Null}" />
   </c:CTextBlock>
-  <Grid Classes="List">
+  <Grid Classes="List" xmlns="">
     <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
       <c:CRun Text="1." Background="{x:Null}" />
     </c:CTextBlock>
@@ -526,7 +526,7 @@
   <c:CTextBlock Classes="Heading2">
     <c:CRun Text="Nested" Background="{x:Null}" />
   </c:CTextBlock>
-  <Grid Classes="List">
+  <Grid Classes="List" xmlns="">
     <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
       <c:CRun Text="•" Background="{x:Null}" />
     </c:CTextBlock>
@@ -580,7 +580,7 @@
   <c:CTextBlock Classes="Paragraph">
     <c:CRun Text="Here's another:" Background="{x:Null}" />
   </c:CTextBlock>
-  <Grid Classes="List">
+  <Grid Classes="List" xmlns="">
     <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
       <c:CRun Text="1." Background="{x:Null}" />
     </c:CTextBlock>
@@ -653,7 +653,7 @@
   <c:CTextBlock Classes="Paragraph">
     <c:CRun Text="Same thing but with paragraphs:" Background="{x:Null}" />
   </c:CTextBlock>
-  <Grid Classes="List">
+  <Grid Classes="List" xmlns="">
     <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
       <c:CRun Text="1." Background="{x:Null}" />
     </c:CTextBlock>
@@ -726,7 +726,7 @@
   <c:CTextBlock Classes="Paragraph">
     <c:CRun Text="This was an error in Markdown 1.0.1:" Background="{x:Null}" />
   </c:CTextBlock>
-  <Grid Classes="List">
+  <Grid Classes="List" xmlns="">
     <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
       <c:CRun Text="•" Background="{x:Null}" />
     </c:CTextBlock>
