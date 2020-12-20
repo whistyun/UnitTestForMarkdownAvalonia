@@ -96,19 +96,7 @@ namespace UnitTestProject
         }
 
         [Test]
-        public void Transform_givenLinksInline1_generatesExpectedResult()
-        {
-            using (UnitTestApplication.Start(TestServices.StyledWindow))
-            {
-                var text = Util.LoadText("Links_inline_style.md");
-                var markdown = new Markdown.Avalonia.Markdown();
-                var result = markdown.Transform(text);
-                Approvals.Verify(Util.AsXaml(result));
-            }
-        }
-
-        [Test]
-        public void Transform_givenLinksInline2_generatesExpectedResult()
+        public void Transform_givenLinksInline_generatesExpectedResult()
         {
             using (UnitTestApplication.Start(TestServices.StyledWindow))
             {
@@ -133,7 +121,7 @@ namespace UnitTestProject
         }
 
         [Test]
-        public void Transform_givenImages1_generatesExpectedResult()
+        public void Transform_givenImages_generatesExpectedResult()
         {
             using (UnitTestApplication.Start(TestServices.StyledWindow))
             {
