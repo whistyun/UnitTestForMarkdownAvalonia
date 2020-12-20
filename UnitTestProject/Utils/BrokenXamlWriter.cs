@@ -14,17 +14,12 @@ using System.Xml.Schema;
 namespace UnitTestProject.Utils
 {
     /*
+     * Export AvaloniaObject to xaml-like text
      *
-     * (´・ω・`)    I wanted to use the provided way to export to xaml
-     *
-     * (´；ω；｀)   However there is no way to do...
-     *
-     *　 　 　　　＿＿＿_
-     *　 　　　／⌒　　⌒＼
-     *　　　／（ ●） 　（●）＼
-     *　 ／::::::⌒（__人__）⌒::::: ＼ 　　So I make it!
-     *　 |　　　　　|r┬-|　　　　　|
-     *　 ＼ 　　 　 `ー'´ 　 　 ／
+     * !!CAUTION!!
+     * 
+     * I'm not sure that this class outputed xaml is valid for Avalonia.
+     * I don't implement the logic to export any properties which is converted by any converter.
      */
     public class BrokenXamlWriter
     {
@@ -178,6 +173,10 @@ namespace UnitTestProject.Utils
 
             Type objType = obj.GetType();
 
+
+            /*
+             * Check Content property
+             */
             PropertyInfo contentProp = objType.GetProperties()
                                               .Where(pinf => pinf.GetCustomAttribute(typeof(ContentAttribute)) != null)
                                               .FirstOrDefault();
@@ -197,9 +196,14 @@ namespace UnitTestProject.Utils
                 }
             }
 
+            /*
+             * Check Avalonia property
+             */
             var attrAvaProps = objType.GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy)
                                   .Where(fld => typeof(AvaloniaProperty).IsAssignableFrom(fld.FieldType))
-                                  .Select(fld => ((AvaloniaProperty)fld.GetValue(null)));
+                                  .Select(fld => ((AvaloniaProperty)fld.GetValue(null)))
+                                  // ignore content property
+                                  .Where(ap => ap.Name != contentProp?.Name);
 
             node.Attributes = new List<ObjectProperty>();
             node.Attributes.AddRange(
@@ -214,9 +218,14 @@ namespace UnitTestProject.Utils
                     })
             );
 
-
+            /*
+             * Check Object property
+             */
             var plainProps = objType.GetProperties()
+                               // ignore avalonia property
                                .Where(pinf => !attrAvaProps.Any(nd => nd.Name == pinf.Name))
+                               // ignore content property
+                               .Where(pinf => pinf != contentProp)
                                .Where(pinf => pinf.CanWrite && pinf.CanWrite)
                                .Where(pinf => pinf.GetSetMethod() != null)
                                .Where(pinf => pinf.GetGetMethod() != null && pinf.GetGetMethod().GetParameters().Length == 0);

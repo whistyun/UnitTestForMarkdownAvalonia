@@ -4,32 +4,20 @@
     <c:CRun Text="" />
     <c:CItalic>
       <c:CRun Text="This text will be italic" />
-      <c:CItalic.Content>
-        <c:CRun Text="This text will be italic" />
-      </c:CItalic.Content>
     </c:CItalic>
     <c:CRun Text=" " />
     <c:CBold>
       <c:CRun Text="This text will be bold" />
-      <c:CBold.Content>
-        <c:CRun Text="This text will be bold" />
-      </c:CBold.Content>
     </c:CBold>
   </c:CTextBlock>
   <c:CTextBlock Classes="Paragraph">
     <c:CRun Text="" />
     <c:CStrikethrough IsStrikethrough="True">
       <c:CRun Text="This text will be striketrhough" />
-      <c:CStrikethrough.Content>
-        <c:CRun Text="This text will be striketrhough" />
-      </c:CStrikethrough.Content>
     </c:CStrikethrough>
     <c:CRun Text=" " />
     <c:CUnderline IsUnderline="True">
       <c:CRun Text="This text will be underline" />
-      <c:CUnderline.Content>
-        <c:CRun Text="This text will be underline" />
-      </c:CUnderline.Content>
     </c:CUnderline>
   </c:CTextBlock>
 </StackPanel>

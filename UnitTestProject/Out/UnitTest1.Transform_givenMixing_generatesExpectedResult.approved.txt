@@ -7,9 +7,6 @@
     <c:CRun Text="Markdown XAML is a port of the popular " />
     <c:CItalic>
       <c:CRun Text="MarkdownSharp" />
-      <c:CItalic.Content>
-        <c:CRun Text="MarkdownSharp" />
-      </c:CItalic.Content>
     </c:CItalic>
     <c:CRun Text=" Markdown processor, but with one very significant difference: Instead of rendering to a string containing HTML, it renders to a FlowDocument suitable for embedding into a WPF window or usercontrol." />
   </c:CTextBlock>
@@ -46,9 +43,6 @@
         <c:CRun Text="Includes a " />
         <c:CCode>
           <c:CRun Text="TextToFlowDocumentConverter" />
-          <c:CCode.Content>
-            <c:CRun Text="TextToFlowDocumentConverter" />
-          </c:CCode.Content>
         </c:CCode>
         <c:CRun Text=" to make it easy to bind Markdown text" />
       </c:CTextBlock>
@@ -75,9 +69,6 @@
         <c:CRun Text="Links " />
         <c:CHyperlink HoverBackground="{x:Null}" HoverForeground="{x:Null}" CommandParameter="https://www.google.com">
           <c:CRun Text="Go to Google!" />
-          <c:CHyperlink.Content>
-            <c:CRun Text="Go to Google!" />
-          </c:CHyperlink.Content>
         </c:CHyperlink>
       </c:CTextBlock>
     </StackPanel>
@@ -89,9 +80,6 @@
         <c:CRun Text="Links with title " />
         <c:CHyperlink HoverBackground="{x:Null}" HoverForeground="{x:Null}" CommandParameter="https://www.google.com">
           <c:CRun Text="Go to Google!" />
-          <c:CHyperlink.Content>
-            <c:CRun Text="Go to Google!" />
-          </c:CHyperlink.Content>
         </c:CHyperlink>
       </c:CTextBlock>
     </StackPanel>
@@ -171,18 +159,8 @@
               <c:CRun Text="a" />
             </c:CTextBlock>
           </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="a" />
-            </c:CTextBlock>
-          </Border.Child>
         </Border>
         <Border Classes="TableHeader" Grid.Column="1" Grid.Row="0">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="b" />
-            </c:CTextBlock>
-          </Border.Child>
           <Border.Child>
             <c:CTextBlock>
               <c:CRun Text="b" />
@@ -195,18 +173,8 @@
               <c:CRun Text="c" />
             </c:CTextBlock>
           </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="c" />
-            </c:CTextBlock>
-          </Border.Child>
         </Border>
         <Border Classes="TableHeader" Grid.Column="3" Grid.Row="0">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="d" />
-            </c:CTextBlock>
-          </Border.Child>
           <Border.Child>
             <c:CTextBlock>
               <c:CRun Text="d" />
@@ -219,18 +187,8 @@
               <c:CRun Text="a1234567890" />
             </c:CTextBlock>
           </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="a1234567890" />
-            </c:CTextBlock>
-          </Border.Child>
         </Border>
         <Border Classes="OddTableRow" Grid.Column="1" Grid.Row="1">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="b1234567890" />
-            </c:CTextBlock>
-          </Border.Child>
           <Border.Child>
             <c:CTextBlock>
               <c:CRun Text="b1234567890" />
@@ -243,18 +201,8 @@
               <c:CRun Text="c1234567890" />
             </c:CTextBlock>
           </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="c1234567890" />
-            </c:CTextBlock>
-          </Border.Child>
         </Border>
         <Border Classes="OddTableRow" Grid.Column="3" Grid.Row="1">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="d1234567890" />
-            </c:CTextBlock>
-          </Border.Child>
           <Border.Child>
             <c:CTextBlock>
               <c:CRun Text="d1234567890" />
@@ -267,18 +215,8 @@
               <c:CRun Text="a" />
             </c:CTextBlock>
           </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="a" />
-            </c:CTextBlock>
-          </Border.Child>
         </Border>
         <Border Classes="EvenTableRow" Grid.Column="1" Grid.Row="2">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="b" />
-            </c:CTextBlock>
-          </Border.Child>
           <Border.Child>
             <c:CTextBlock>
               <c:CRun Text="b" />
@@ -291,18 +229,8 @@
               <c:CRun Text="c" />
             </c:CTextBlock>
           </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="c" />
-            </c:CTextBlock>
-          </Border.Child>
         </Border>
         <Border Classes="EvenTableRow" Grid.Column="3" Grid.Row="2">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="d" />
-            </c:CTextBlock>
-          </Border.Child>
           <Border.Child>
             <c:CTextBlock>
               <c:CRun Text="d" />
@@ -315,26 +243,13 @@
               <c:CRun Text="A" />
             </c:CTextBlock>
           </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="A" />
-            </c:CTextBlock>
-          </Border.Child>
         </Border>
         <Border Classes="OddTableRow" Grid.Column="1" Grid.Row="3">
           <Border.Child>
             <c:CTextBlock />
           </Border.Child>
-          <Border.Child>
-            <c:CTextBlock />
-          </Border.Child>
         </Border>
         <Border Classes="OddTableRow" Grid.Column="2" Grid.Row="3">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="C" />
-            </c:CTextBlock>
-          </Border.Child>
           <Border.Child>
             <c:CTextBlock>
               <c:CRun Text="C" />
@@ -348,18 +263,8 @@
               <c:CRun Text="1" />
             </c:CTextBlock>
           </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="1" />
-            </c:CTextBlock>
-          </Border.Child>
         </Border>
         <Border Classes="EvenTableRow" Grid.Column="1" Grid.Row="4">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="2" />
-            </c:CTextBlock>
-          </Border.Child>
           <Border.Child>
             <c:CTextBlock>
               <c:CRun Text="2" />
@@ -372,18 +277,8 @@
               <c:CRun Text="3" />
             </c:CTextBlock>
           </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="3" />
-            </c:CTextBlock>
-          </Border.Child>
         </Border>
         <Border Classes="EvenTableRow" Grid.Column="3" Grid.Row="4">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="4" />
-            </c:CTextBlock>
-          </Border.Child>
           <Border.Child>
             <c:CTextBlock>
               <c:CRun Text="4" />
@@ -396,18 +291,8 @@
               <c:CRun Text="あ" />
             </c:CTextBlock>
           </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="あ" />
-            </c:CTextBlock>
-          </Border.Child>
         </Border>
         <Border Classes="OddTableRow" Grid.Column="1" Grid.Row="5">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="い" />
-            </c:CTextBlock>
-          </Border.Child>
           <Border.Child>
             <c:CTextBlock>
               <c:CRun Text="い" />
@@ -420,309 +305,8 @@
               <c:CRun Text="う" />
             </c:CTextBlock>
           </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="う" />
-            </c:CTextBlock>
-          </Border.Child>
         </Border>
         <Border Classes="OddTableRow" Grid.Column="3" Grid.Row="5">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="え" />
-            </c:CTextBlock>
-          </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="え" />
-            </c:CTextBlock>
-          </Border.Child>
-        </Border>
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition />
-          <ColumnDefinition />
-          <ColumnDefinition />
-          <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-          <RowDefinition />
-          <RowDefinition />
-          <RowDefinition />
-          <RowDefinition />
-          <RowDefinition />
-          <RowDefinition />
-        </Grid.RowDefinitions>
-      </Grid>
-    </Border.Child>
-    <Border.Child>
-      <Grid Classes="Table">
-        <Border Classes="TableHeader" Grid.Column="0" Grid.Row="0">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="a" />
-            </c:CTextBlock>
-          </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="a" />
-            </c:CTextBlock>
-          </Border.Child>
-        </Border>
-        <Border Classes="TableHeader" Grid.Column="1" Grid.Row="0">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="b" />
-            </c:CTextBlock>
-          </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="b" />
-            </c:CTextBlock>
-          </Border.Child>
-        </Border>
-        <Border Classes="TableHeader" Grid.Column="2" Grid.Row="0">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="c" />
-            </c:CTextBlock>
-          </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="c" />
-            </c:CTextBlock>
-          </Border.Child>
-        </Border>
-        <Border Classes="TableHeader" Grid.Column="3" Grid.Row="0">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="d" />
-            </c:CTextBlock>
-          </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="d" />
-            </c:CTextBlock>
-          </Border.Child>
-        </Border>
-        <Border Classes="OddTableRow" Grid.Column="0" Grid.Row="1">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="a1234567890" />
-            </c:CTextBlock>
-          </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="a1234567890" />
-            </c:CTextBlock>
-          </Border.Child>
-        </Border>
-        <Border Classes="OddTableRow" Grid.Column="1" Grid.Row="1">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="b1234567890" />
-            </c:CTextBlock>
-          </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="b1234567890" />
-            </c:CTextBlock>
-          </Border.Child>
-        </Border>
-        <Border Classes="OddTableRow" Grid.Column="2" Grid.Row="1">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="c1234567890" />
-            </c:CTextBlock>
-          </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="c1234567890" />
-            </c:CTextBlock>
-          </Border.Child>
-        </Border>
-        <Border Classes="OddTableRow" Grid.Column="3" Grid.Row="1">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="d1234567890" />
-            </c:CTextBlock>
-          </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="d1234567890" />
-            </c:CTextBlock>
-          </Border.Child>
-        </Border>
-        <Border Classes="EvenTableRow" Grid.Column="0" Grid.Row="2">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="a" />
-            </c:CTextBlock>
-          </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="a" />
-            </c:CTextBlock>
-          </Border.Child>
-        </Border>
-        <Border Classes="EvenTableRow" Grid.Column="1" Grid.Row="2">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="b" />
-            </c:CTextBlock>
-          </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="b" />
-            </c:CTextBlock>
-          </Border.Child>
-        </Border>
-        <Border Classes="EvenTableRow" Grid.Column="2" Grid.Row="2">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="c" />
-            </c:CTextBlock>
-          </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="c" />
-            </c:CTextBlock>
-          </Border.Child>
-        </Border>
-        <Border Classes="EvenTableRow" Grid.Column="3" Grid.Row="2">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="d" />
-            </c:CTextBlock>
-          </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="d" />
-            </c:CTextBlock>
-          </Border.Child>
-        </Border>
-        <Border Classes="OddTableRow" Grid.Column="0" Grid.Row="3">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="A" />
-            </c:CTextBlock>
-          </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="A" />
-            </c:CTextBlock>
-          </Border.Child>
-        </Border>
-        <Border Classes="OddTableRow" Grid.Column="1" Grid.Row="3">
-          <Border.Child>
-            <c:CTextBlock />
-          </Border.Child>
-          <Border.Child>
-            <c:CTextBlock />
-          </Border.Child>
-        </Border>
-        <Border Classes="OddTableRow" Grid.Column="2" Grid.Row="3">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="C" />
-            </c:CTextBlock>
-          </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="C" />
-            </c:CTextBlock>
-          </Border.Child>
-        </Border>
-        <Border Classes="OddTableRow" Grid.Column="3" Grid.Row="3" />
-        <Border Classes="EvenTableRow" Grid.Column="0" Grid.Row="4">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="1" />
-            </c:CTextBlock>
-          </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="1" />
-            </c:CTextBlock>
-          </Border.Child>
-        </Border>
-        <Border Classes="EvenTableRow" Grid.Column="1" Grid.Row="4">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="2" />
-            </c:CTextBlock>
-          </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="2" />
-            </c:CTextBlock>
-          </Border.Child>
-        </Border>
-        <Border Classes="EvenTableRow" Grid.Column="2" Grid.Row="4">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="3" />
-            </c:CTextBlock>
-          </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="3" />
-            </c:CTextBlock>
-          </Border.Child>
-        </Border>
-        <Border Classes="EvenTableRow" Grid.Column="3" Grid.Row="4">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="4" />
-            </c:CTextBlock>
-          </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="4" />
-            </c:CTextBlock>
-          </Border.Child>
-        </Border>
-        <Border Classes="OddTableRow" Grid.Column="0" Grid.Row="5">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="あ" />
-            </c:CTextBlock>
-          </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="あ" />
-            </c:CTextBlock>
-          </Border.Child>
-        </Border>
-        <Border Classes="OddTableRow" Grid.Column="1" Grid.Row="5">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="い" />
-            </c:CTextBlock>
-          </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="い" />
-            </c:CTextBlock>
-          </Border.Child>
-        </Border>
-        <Border Classes="OddTableRow" Grid.Column="2" Grid.Row="5">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="う" />
-            </c:CTextBlock>
-          </Border.Child>
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="う" />
-            </c:CTextBlock>
-          </Border.Child>
-        </Border>
-        <Border Classes="OddTableRow" Grid.Column="3" Grid.Row="5">
-          <Border.Child>
-            <c:CTextBlock>
-              <c:CRun Text="え" />
-            </c:CTextBlock>
-          </Border.Child>
           <Border.Child>
             <c:CTextBlock>
               <c:CRun Text="え" />
@@ -770,15 +354,9 @@
     <c:CRun Text="Markdown.Xaml support " />
     <c:CCode>
       <c:CRun Text="inline code" />
-      <c:CCode.Content>
-        <c:CRun Text="inline code" />
-      </c:CCode.Content>
     </c:CCode>
   </c:CTextBlock>
   <Border Classes="CodeBlock" xmlns="">
-    <Border.Child>
-      <TextBlock Text="#include &lt;stdio.h&gt;&#xA;int main()&#xA;{&#xA;   // printf() displays the string inside quotation&#xA;   printf(&quot;Hello, World!&quot;);&#xA;   return 0;&#xA;}" Classes="CodeBlock" />
-    </Border.Child>
     <Border.Child>
       <TextBlock Text="#include &lt;stdio.h&gt;&#xA;int main()&#xA;{&#xA;   // printf() displays the string inside quotation&#xA;   printf(&quot;Hello, World!&quot;);&#xA;   return 0;&#xA;}" Classes="CodeBlock" />
     </Border.Child>
@@ -853,61 +431,6 @@
               <c:CRun Text="Includes a " />
               <c:CCode>
                 <c:CRun Text="TextToFlowDocumentConverter" />
-                <c:CCode.Content>
-                  <c:CRun Text="TextToFlowDocumentConverter" />
-                </c:CCode.Content>
-              </c:CCode>
-              <c:CRun Text=" to make it easy to bind Markdown text" />
-            </c:CTextBlock>
-          </StackPanel>
-          <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-          </Grid.ColumnDefinitions>
-          <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-          </Grid.RowDefinitions>
-        </Grid>
-      </StackPanel>
-    </Border.Child>
-    <Border.Child>
-      <StackPanel Classes="Blockquote">
-        <c:CTextBlock Classes="Heading2">
-          <c:CRun Text="Features" />
-        </c:CTextBlock>
-        <c:CTextBlock Classes="Paragraph">
-          <c:CRun Text="MarkDown.Xaml has a number of convenient features" />
-        </c:CTextBlock>
-        <Grid Classes="List">
-          <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
-            <c:CRun Text="•" />
-          </c:CTextBlock>
-          <StackPanel Grid.Column="1" Grid.Row="0">
-            <c:CTextBlock Classes="Paragraph">
-              <c:CRun Text="The engine itself is a single file, for easy inclusion in your own projects" />
-            </c:CTextBlock>
-          </StackPanel>
-          <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="1">
-            <c:CRun Text="•" />
-          </c:CTextBlock>
-          <StackPanel Grid.Column="1" Grid.Row="1">
-            <c:CTextBlock Classes="Paragraph">
-              <c:CRun Text="Code for the engine is structured in the same manner as the original MarkdownSharp " />
-            </c:CTextBlock>
-          </StackPanel>
-          <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="2">
-            <c:CRun Text="•" />
-          </c:CTextBlock>
-          <StackPanel Grid.Column="1" Grid.Row="2">
-            <c:CTextBlock Classes="Paragraph">
-              <c:CRun Text="Includes a " />
-              <c:CCode>
-                <c:CRun Text="TextToFlowDocumentConverter" />
-                <c:CCode.Content>
-                  <c:CRun Text="TextToFlowDocumentConverter" />
-                </c:CCode.Content>
               </c:CCode>
               <c:CRun Text=" to make it easy to bind Markdown text" />
             </c:CTextBlock>
