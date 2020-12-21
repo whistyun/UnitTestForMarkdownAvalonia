@@ -2,6 +2,7 @@
 using Avalonia.Controls;
 using Avalonia.Data.Core;
 using Avalonia.Metadata;
+using Avalonia.Styling;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -386,6 +387,12 @@ namespace UnitTestProject.Utils
 
         private void Append(XmlNode valueNode, ObjectProperty prop, bool isContent)
         {
+            if (prop.Value is Styles styles)
+            {
+                // perhaps in v0.9, Styles is already initialized
+                if (styles.Count == 0) return;
+            }
+
             if (prop.Value is String
                     || prop.Value is bool
                     || prop.Value is short || prop.Value is int || prop.Value is long
