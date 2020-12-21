@@ -1,3 +1,6 @@
+// Copyright (c) The Avalonia Project. All rights reserved.
+// Licensed under the MIT license. See licence.md file in the project root for full license information.
+
 using System;
 using System.Reactive.Disposables;
 using Avalonia.Logging;
@@ -27,7 +30,7 @@ namespace Avalonia.UnitTests
             return Disposable.Create(() => Logger.Sink = null);
         }
 
-        public bool IsEnabled(LogEventLevel level, string area)
+        public bool IsEnabled(LogEventLevel level)
         {
             return true;
         }

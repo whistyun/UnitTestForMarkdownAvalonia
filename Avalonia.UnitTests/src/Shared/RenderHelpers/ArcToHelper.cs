@@ -45,8 +45,6 @@
 // Commented out some unused values calculations.
 // These are not supposed to be removed from the source code,
 // as these may be helpful for debugging.
-//
-// Adapted from http://www.spaceroots.org/documents/ellipse/EllipticalArc.java
 
 using System;
 using Avalonia.Media;

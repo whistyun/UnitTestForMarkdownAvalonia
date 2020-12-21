@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.IO;
 using Avalonia.Media;
 using Avalonia.Platform;
-using Avalonia.Visuals.Media.Imaging;
 using Moq;
 
 namespace Avalonia.UnitTests
 {
     public class MockPlatformRenderInterface : IPlatformRenderInterface
     {
+        public IEnumerable<string> InstalledFontNames => new string[0];
+
         public IFormattedTextImpl CreateFormattedText(
             string text,
             Typeface typeface,
-            double fontSize,
             TextAlignment textAlignment,
             TextWrapping wrapping,
             Size constraint,
@@ -34,7 +34,7 @@ namespace Avalonia.UnitTests
 
         public IGeometryImpl CreateRectangleGeometry(Rect rect)
         {
-            return Mock.Of<IGeometryImpl>(x => x.Bounds == rect);
+            return Mock.Of<IGeometryImpl>();
         }
 
         public IRenderTarget CreateRenderTarget(IEnumerable<object> surfaces)
@@ -55,8 +55,7 @@ namespace Avalonia.UnitTests
         public IWriteableBitmapImpl CreateWriteableBitmap(
             PixelSize size,
             Vector dpi,
-            PixelFormat format,
-            AlphaFormat alphaFormat)
+            PixelFormat? format = default(PixelFormat?))
         {
             throw new NotImplementedException();
         }
@@ -71,24 +70,8 @@ namespace Avalonia.UnitTests
             return Mock.Of<IBitmapImpl>();
         }
 
-        public IBitmapImpl LoadBitmapToWidth(Stream stream, int width, BitmapInterpolationMode interpolationMode = BitmapInterpolationMode.HighQuality)
-        {
-            return Mock.Of<IBitmapImpl>();
-        }
-
-        public IBitmapImpl LoadBitmapToHeight(Stream stream, int height, BitmapInterpolationMode interpolationMode = BitmapInterpolationMode.HighQuality)
-        {
-            return Mock.Of<IBitmapImpl>();
-        }
-
-        public IBitmapImpl ResizeBitmap(IBitmapImpl bitmapImpl, PixelSize destinationSize, BitmapInterpolationMode interpolationMode = BitmapInterpolationMode.HighQuality)
-        {
-            return Mock.Of<IBitmapImpl>();
-        }
-
         public IBitmapImpl LoadBitmap(
             PixelFormat format,
-            AlphaFormat alphaFormat,
             IntPtr data,
             PixelSize size,
             Vector dpi,
@@ -96,17 +79,5 @@ namespace Avalonia.UnitTests
         {
             throw new NotImplementedException();
         }
-
-        public IGlyphRunImpl CreateGlyphRun(GlyphRun glyphRun, out double width)
-        {
-            width = 0;
-            return Mock.Of<IGlyphRunImpl>();
-        }
-
-        public bool SupportsIndividualRoundRects { get; set; }
-
-        public AlphaFormat DefaultAlphaFormat => AlphaFormat.Premul;
-
-        public PixelFormat DefaultPixelFormat => PixelFormat.Rgba8888;
     }
 }

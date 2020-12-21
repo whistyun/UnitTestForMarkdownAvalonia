@@ -1,3 +1,6 @@
+// Copyright (c) The Avalonia Project. All rights reserved.
+// Licensed under the MIT license. See licence.md file in the project root for full license information.
+
 using System;
 using Moq;
 using Avalonia.Input;
@@ -27,15 +30,10 @@ namespace Avalonia.UnitTests
             styler: new Styler(),
             theme: () => CreateDefaultTheme(),
             threadingInterface: Mock.Of<IPlatformThreadingInterface>(x => x.CurrentThreadIsLoopThread == true),
-            fontManagerImpl: new MockFontManagerImpl(),
-            textShaperImpl: new MockTextShaperImpl(),
             windowingPlatform: new MockWindowingPlatform());
 
         public static readonly TestServices MockPlatformRenderInterface = new TestServices(
-            assetLoader: new AssetLoader(),
-            renderInterface: new MockPlatformRenderInterface(),
-            fontManagerImpl: new MockFontManagerImpl(),
-            textShaperImpl: new MockTextShaperImpl());
+            renderInterface: new MockPlatformRenderInterface());
 
         public static readonly TestServices MockPlatformWrapper = new TestServices(
             platform: Mock.Of<IRuntimePlatform>());
@@ -54,7 +52,7 @@ namespace Avalonia.UnitTests
             keyboardDevice: () => new KeyboardDevice(),
             keyboardNavigation: new KeyboardNavigationHandler(),
             inputManager: new InputManager());
-
+        
         public static readonly TestServices RealStyler = new TestServices(
             styler: new Styler());
 
@@ -74,8 +72,6 @@ namespace Avalonia.UnitTests
             IStyler styler = null,
             Func<Styles> theme = null,
             IPlatformThreadingInterface threadingInterface = null,
-            IFontManagerImpl fontManagerImpl = null,
-            ITextShaperImpl textShaperImpl = null,
             IWindowImpl windowImpl = null,
             IWindowingPlatform windowingPlatform = null)
         {
@@ -88,8 +84,6 @@ namespace Avalonia.UnitTests
             MouseDevice = mouseDevice;
             Platform = platform;
             RenderInterface = renderInterface;
-            FontManagerImpl = fontManagerImpl;
-            TextShaperImpl = textShaperImpl;
             Scheduler = scheduler;
             StandardCursorFactory = standardCursorFactory;
             Styler = styler;
@@ -108,8 +102,6 @@ namespace Avalonia.UnitTests
         public Func<IMouseDevice> MouseDevice { get; }
         public IRuntimePlatform Platform { get; }
         public IPlatformRenderInterface RenderInterface { get; }
-        public IFontManagerImpl FontManagerImpl { get; }
-        public ITextShaperImpl TextShaperImpl { get; }
         public IScheduler Scheduler { get; }
         public IStandardCursorFactory StandardCursorFactory { get; }
         public IStyler Styler { get; }
@@ -134,8 +126,6 @@ namespace Avalonia.UnitTests
             IStyler styler = null,
             Func<Styles> theme = null,
             IPlatformThreadingInterface threadingInterface = null,
-            IFontManagerImpl fontManagerImpl = null,
-            ITextShaperImpl textShaperImpl = null,
             IWindowImpl windowImpl = null,
             IWindowingPlatform windowingPlatform = null)
         {
@@ -149,8 +139,6 @@ namespace Avalonia.UnitTests
                 mouseDevice: mouseDevice ?? MouseDevice,
                 platform: platform ?? Platform,
                 renderInterface: renderInterface ?? RenderInterface,
-                fontManagerImpl: fontManagerImpl ?? FontManagerImpl,
-                textShaperImpl: textShaperImpl ?? TextShaperImpl,
                 scheduler: scheduler ?? Scheduler,
                 standardCursorFactory: standardCursorFactory ?? StandardCursorFactory,
                 styler: styler ?? Styler,
@@ -167,7 +155,8 @@ namespace Avalonia.UnitTests
                 new DefaultTheme(),
             };
 
-            var baseLight = (IStyle)AvaloniaXamlLoader.Load(
+            var loader = new AvaloniaXamlLoader();
+            var baseLight = (IStyle)loader.Load(
                 new Uri("resm:Avalonia.Themes.Default.Accents.BaseLight.xaml?assembly=Avalonia.Themes.Default"));
             result.Add(baseLight);
 
@@ -176,11 +165,10 @@ namespace Avalonia.UnitTests
 
         private static IPlatformRenderInterface CreateRenderInterfaceMock()
         {
-            return Mock.Of<IPlatformRenderInterface>(x =>
+            return Mock.Of<IPlatformRenderInterface>(x => 
                 x.CreateFormattedText(
                     It.IsAny<string>(),
                     It.IsAny<Typeface>(),
-                    It.IsAny<double>(),
                     It.IsAny<TextAlignment>(),
                     It.IsAny<TextWrapping>(),
                     It.IsAny<Size>(),

@@ -1,22 +1,23 @@
+// Copyright (c) The Avalonia Project. All rights reserved.
+// Licensed under the MIT license. See licence.md file in the project root for full license information.
+
 using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Presenters;
 using Avalonia.Controls.Templates;
 using Avalonia.Layout;
-using Avalonia.LogicalTree;
 using Avalonia.Platform;
 using Avalonia.Rendering;
 using Avalonia.Styling;
 
 namespace Avalonia.UnitTests
 {
-    public class TestTemplatedRoot : ContentControl, ILayoutRoot, IRenderRoot, ILogicalRoot
+    public class TestTemplatedRoot : ContentControl, ILayoutRoot, IRenderRoot, IStyleRoot
     {
         private readonly NameScope _nameScope = new NameScope();
 
         public TestTemplatedRoot()
         {
-            LayoutManager = new LayoutManager(this);
             Template = new FuncControlTemplate<TestTemplatedRoot>((x, scope) => new ContentPresenter
             {
                 Name = "PART_ContentPresenter",
@@ -29,7 +30,7 @@ namespace Avalonia.UnitTests
 
         public double LayoutScaling => 1;
 
-        public ILayoutManager LayoutManager { get; set; }
+        public ILayoutManager LayoutManager { get; set; } = new LayoutManager();
 
         public double RenderScaling => 1;
 
