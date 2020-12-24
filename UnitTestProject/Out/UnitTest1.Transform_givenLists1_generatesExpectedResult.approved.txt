@@ -763,4 +763,283 @@
       <RowDefinition />
     </Grid.RowDefinitions>
   </Grid>
+  <c:CTextBlock Classes="Paragraph">
+    <c:CRun Text="Mixing list" />
+  </c:CTextBlock>
+  <Grid Classes="List" xmlns="">
+    <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
+      <c:CRun Text="1." />
+    </c:CTextBlock>
+    <StackPanel Grid.Column="1" Grid.Row="0">
+      <c:CTextBlock Classes="Paragraph">
+        <c:CRun Text="one" />
+      </c:CTextBlock>
+      <Grid Classes="List">
+        <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
+          <c:CRun Text="1." />
+        </c:CTextBlock>
+        <StackPanel Grid.Column="1" Grid.Row="0">
+          <c:CTextBlock Classes="Paragraph">
+            <c:CRun Text="one-one" />
+          </c:CTextBlock>
+        </StackPanel>
+        <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="1">
+          <c:CRun Text="2." />
+        </c:CTextBlock>
+        <StackPanel Grid.Column="1" Grid.Row="1">
+          <c:CTextBlock Classes="Paragraph">
+            <c:CRun Text="one-two inlist 1 inlist 2 inline 3 inline 4" />
+          </c:CTextBlock>
+          <Border Classes="CodeBlock">
+            <Border.Child>
+              <TextBlock Text="as code&#xA;" Classes="CodeBlock" />
+            </Border.Child>
+          </Border>
+        </StackPanel>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition />
+          <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition />
+          <RowDefinition />
+        </Grid.RowDefinitions>
+      </Grid>
+    </StackPanel>
+    <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="1">
+      <c:CRun Text="2." />
+    </c:CTextBlock>
+    <StackPanel Grid.Column="1" Grid.Row="1">
+      <c:CTextBlock Classes="Paragraph">
+        <c:CRun Text="two" />
+      </c:CTextBlock>
+    </StackPanel>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+  </Grid>
+  <Grid Classes="List" xmlns="">
+    <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
+      <c:CRun Text="•" />
+    </c:CTextBlock>
+    <StackPanel Grid.Column="1" Grid.Row="0">
+      <c:CTextBlock Classes="Paragraph">
+        <c:CRun Text="three" />
+      </c:CTextBlock>
+    </StackPanel>
+    <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="1">
+      <c:CRun Text="•" />
+    </c:CTextBlock>
+    <StackPanel Grid.Column="1" Grid.Row="1">
+      <c:CTextBlock Classes="Paragraph">
+        <c:CRun Text="four" />
+      </c:CTextBlock>
+    </StackPanel>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+  </Grid>
+  <Grid Classes="List" xmlns="">
+    <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
+      <c:CRun Text="▪" />
+    </c:CTextBlock>
+    <StackPanel Grid.Column="1" Grid.Row="0">
+      <c:CTextBlock Classes="Paragraph">
+        <c:CRun Text="five" />
+      </c:CTextBlock>
+    </StackPanel>
+    <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="1">
+      <c:CRun Text="▪" />
+    </c:CTextBlock>
+    <StackPanel Grid.Column="1" Grid.Row="1">
+      <c:CTextBlock Classes="Paragraph">
+        <c:CRun Text="six" />
+      </c:CTextBlock>
+      <Grid Classes="List">
+        <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
+          <c:CRun Text="▪" />
+        </c:CTextBlock>
+        <StackPanel Grid.Column="1" Grid.Row="0">
+          <c:CTextBlock Classes="Paragraph">
+            <c:CRun Text="seven" />
+          </c:CTextBlock>
+        </StackPanel>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition />
+          <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition />
+        </Grid.RowDefinitions>
+      </Grid>
+    </StackPanel>
+    <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="2">
+      <c:CRun Text="▪" />
+    </c:CTextBlock>
+    <StackPanel Grid.Column="1" Grid.Row="2">
+      <c:CTextBlock Classes="Paragraph">
+        <c:CRun Text="eight" />
+      </c:CTextBlock>
+    </StackPanel>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+  </Grid>
+  <Grid Classes="List" xmlns="">
+    <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
+      <c:CRun Text="○" />
+    </c:CTextBlock>
+    <StackPanel Grid.Column="1" Grid.Row="0">
+      <c:CTextBlock Classes="Paragraph">
+        <c:CRun Text="eight" />
+      </c:CTextBlock>
+    </StackPanel>
+    <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="1">
+      <c:CRun Text="○" />
+    </c:CTextBlock>
+    <StackPanel Grid.Column="1" Grid.Row="1">
+      <c:CTextBlock Classes="Paragraph">
+        <c:CRun Text="nine" />
+      </c:CTextBlock>
+    </StackPanel>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+  </Grid>
+  <c:CTextBlock Classes="Paragraph">
+    <c:CRun Text="Enhanced syntax alphabet order." />
+  </c:CTextBlock>
+  <c:CTextBlock Classes="Paragraph">
+    <c:CRun Text="ab. foo" />
+  </c:CTextBlock>
+  <Grid Classes="List" xmlns="">
+    <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
+      <c:CRun Text="a." />
+    </c:CTextBlock>
+    <StackPanel Grid.Column="1" Grid.Row="0">
+      <c:CTextBlock Classes="Paragraph">
+        <c:CRun Text="bar ab. foo2" />
+      </c:CTextBlock>
+    </StackPanel>
+    <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="1">
+      <c:CRun Text="b." />
+    </c:CTextBlock>
+    <StackPanel Grid.Column="1" Grid.Row="1">
+      <c:CTextBlock Classes="Paragraph">
+        <c:CRun Text="bar2" />
+      </c:CTextBlock>
+    </StackPanel>
+    <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="2">
+      <c:CRun Text="c." />
+    </c:CTextBlock>
+    <StackPanel Grid.Column="1" Grid.Row="2">
+      <c:CTextBlock Classes="Paragraph">
+        <c:CRun Text="foo3" />
+      </c:CTextBlock>
+    </StackPanel>
+    <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="3">
+      <c:CRun Text="d." />
+    </c:CTextBlock>
+    <StackPanel Grid.Column="1" Grid.Row="3">
+      <c:CTextBlock Classes="Paragraph">
+        <c:CRun Text="bar3" />
+      </c:CTextBlock>
+    </StackPanel>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+  </Grid>
+  <c:CTextBlock Classes="Paragraph">
+    <c:CRun Text="Enhanced syntax roman order." />
+  </c:CTextBlock>
+  <c:CTextBlock Classes="Paragraph">
+    <c:CRun Text="yes, we can. no, i can." />
+  </c:CTextBlock>
+  <Grid Classes="List" xmlns="">
+    <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
+      <c:CRun Text="i." />
+    </c:CTextBlock>
+    <StackPanel Grid.Column="1" Grid.Row="0">
+      <c:CTextBlock Classes="Paragraph">
+        <c:CRun Text="one" />
+      </c:CTextBlock>
+    </StackPanel>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+    </Grid.RowDefinitions>
+  </Grid>
+  <m:Rule BoldLineWidth="2" Classes="TwoLines" />
+  <c:CTextBlock Classes="Paragraph" />
+  <Grid Classes="List" xmlns="">
+    <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
+      <c:CRun Text="i." />
+    </c:CTextBlock>
+    <StackPanel Grid.Column="1" Grid.Row="0">
+      <c:CTextBlock Classes="Paragraph">
+        <c:CRun Text="one" />
+      </c:CTextBlock>
+    </StackPanel>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+    </Grid.RowDefinitions>
+  </Grid>
+  <m:Rule BoldLineWidth="2" Classes="TwoLines" />
+  <c:CTextBlock Classes="Paragraph" />
+  <Grid Classes="List" xmlns="">
+    <c:CTextBlock Classes="ListMarker" Grid.Column="0" Grid.Row="0">
+      <c:CRun Text="i." />
+    </c:CTextBlock>
+    <StackPanel Grid.Column="1" Grid.Row="0">
+      <c:CTextBlock Classes="Paragraph">
+        <c:CRun Text="one yes, we can" />
+      </c:CTextBlock>
+    </StackPanel>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+    </Grid.RowDefinitions>
+  </Grid>
+  <m:Rule BoldLineWidth="2" Classes="TwoLines" />
+  <c:CTextBlock Classes="Paragraph">
+    <c:CRun Text="iiii, one" />
+  </c:CTextBlock>
 </StackPanel>
