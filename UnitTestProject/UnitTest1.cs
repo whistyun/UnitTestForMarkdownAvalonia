@@ -72,6 +72,18 @@ namespace UnitTestProject
         }
 
         [Test]
+        public void Transform_givenLists3_generatesExpectedResult()
+        {
+            using (UnitTestApplication.Start(TestServices.StyledWindow))
+            {
+                var text = Util.LoadText("Lists3.md");
+                var markdown = new Markdown.Avalonia.Markdown();
+                var result = markdown.Transform(text);
+                Approvals.Verify(Util.AsXaml(result));
+            }
+        }
+
+        [Test]
         public void Transform_givenTables1_generatesExpectedResult()
         {
             using (UnitTestApplication.Start(TestServices.StyledWindow))
